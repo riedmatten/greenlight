@@ -16,9 +16,9 @@
 <div class="header py-4">
   <div class="container">
     <div class="d-flex">
-      <%= link_to (current_user ? home_page : root_path), class: "header-brand" do %>
-        <%= image_tag(logo_image, class: "header-brand-img", alt:"") %>
-      <% end %>
+	 <a class="header-brand" href="https://greencommunication.online" target="_blank">
+        <img class="header-brand-img" alt="" src="https://greenwebspace.com/img/2020/LogoGComm200px.png" />
+        </a>
 
       <div class="d-flex ml-auto">
         <% if current_user %>
@@ -77,12 +77,12 @@
                 <% end %>
               <% end %>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="http://docs.bigbluebutton.org/install/greenlight-v2.html" target="_blank" rel="noopener">
+              <a class="dropdown-item" href="https://greenwebspace.com/portal/index.php/knowledgebase/26/CreenCommunication" target="_blank" rel="noopener">
                 <i class="dropdown-icon far fa-question-circle"></i> <%= t("header.dropdown.help") %>
               </a>
               <% if Rails.configuration.report_issue_url.present? %>
-                <a class="dropdown-item" href="<%= Rails.configuration.report_issue_url %>" target="_blank" rel="noopener">
-                  <i class="dropdown-icon fas fa-exclamation mr-3"></i><%= t("errors.internal.report") %>
+                <a class="dropdown-item" href="https://greenwebspace.com/portal/submitticket.php?step=2&deptid=2" target="_blank" rel="noopener">
+                  <i class="dropdown-icon fas fa-envelope mr-3"></i><%= t("errors.internal.report") %>
                 </a>
               <% end %>
               <%= link_to logout_path, class: "dropdown-item" do %>
@@ -100,9 +100,6 @@
             <%= link_to t("login"), signin_path, :class => "btn btn-outline-primary mx-2 sign-in-button" %>
           <% end %>
 
-          <% if allow_user_signup? && allow_greenlight_accounts %>
-            <%= link_to t("signup.title"), signup_path, :class => "btn btn-outline-primary mx-2 sign-in-button" %>
-          <% end %>
         <% end %>
       </div>
     </div>
